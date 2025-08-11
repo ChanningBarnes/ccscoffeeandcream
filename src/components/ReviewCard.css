@@ -1,0 +1,35 @@
+/* src/components/ReviewCard.css */
+.review-card {
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex: 1; /* Allow cards to grow in flex container */
+    min-width: 280px; /* Minimum width for card */
+    max-width: 350px; /* Max width to prevent overly wide cards */
+  }
+  
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .review-author {
+    font-weight: bold;
+    color: #9d92c9; /* Lavender for author */
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .review-rating {
+    font-size: 1.5rem;
+  }

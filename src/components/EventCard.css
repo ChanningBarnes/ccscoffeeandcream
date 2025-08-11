@@ -1,0 +1,43 @@
+/* src/components/EventCard.css */
+.event-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%; /* Ensure all cards in the grid have equal height */
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.event-title {
+  color: #7db9da; /* Blue for titles */
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.event-date,
+.event-time {
+  font-weight: bold;
+  color: #9d92c9; /* Lavender for date/time */
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.event-date i,
+.event-time i {
+  margin-right: 8px;
+}
+
+.event-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 15px;
+}

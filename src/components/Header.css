@@ -1,0 +1,102 @@
+/* src/components/Header.css */
+.main-header {
+  background-color: #9d92c9; /* Lavender */
+  /* Remove padding that was pushing height, and set a fixed min-height for the bar */
+  padding: 0; /* Remove vertical padding */
+  min-height: 100px; /* Set a minimum height for the header bar itself */
+  display: flex; /* Make it a flex container to vertically align content */
+  align-items: center; /* Vertically center content within the header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensure content inside container is also centered vertically */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Keep horizontal padding */
+  width: 100%; /* Ensure container takes full width */
+}
+
+.main-header .logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.main-header .logo-img {
+  height: 100px; /* Increased height for the logo image */
+  margin-right: 15px; /* Spacing between logo and text/nav if any */
+  width: auto; /* Maintain aspect ratio */
+  /* If the logo image itself has transparent space, you might need object-fit: cover or adjust source image */
+}
+
+.main-header .logo-text {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: 'Georgia', serif;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-nav li {
+  margin-left: 30px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: #d5afc0; /* Pink on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-header {
+    min-height: 80px; /* Adjust min-height for smaller screens */
+  }
+  .main-header .logo-img {
+    height: 70px; /* Smaller logo on smaller screens */
+    margin-right: 10px;
+  }
+  .main-header .container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px; /* Add slight padding if needed for mobile stack */
+    padding-bottom: 10px;
+  }
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px; /* Space between logo and nav on mobile */
+  }
+  .main-nav li {
+    margin: 0 10px 5px; /* Adjusted margin for wrapped nav items */
+  }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        min-height: 70px;
+    }
+    .main-header .logo-img {
+        height: 60px;
+    }
+    .main-header .logo-text {
+        font-size: 1.8rem;
+    }
+}

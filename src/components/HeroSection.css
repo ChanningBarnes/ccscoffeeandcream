@@ -1,0 +1,129 @@
+/* src/components/HeroSection.css */
+.hero-section {
+    background-color:transparent; /* Background image for the whole section */
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px; /* Adjust padding as needed */
+    min-height: 550px; /* Ensure sufficient height, may need adjustment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Hide anything that goes outside */
+  }
+  
+  .hero-section::before { /* Overlay for better text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:transparent; /* Dark overlay */
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center items horizontally within hero-content */
+    justify-content: center;
+    background-color: white;
+  }
+  
+  .hero-main-image {
+    max-width: 90%; /* Adjust size relative to its container */
+    height: auto;
+    border-radius: 15px; /* Slightly rounded corners for the image */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Prominent shadow for the image */
+    margin-bottom: 40px; /* Space between image and text */
+    object-fit: cover; /* Ensure image covers its area well */
+  }
+  
+  .hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #9d92c9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none; 
+  }
+  
+  /* Reusing existing btn-primary from App.css, adding btn-secondary */
+  .btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: #fff;
+    padding: 12px 25px;
+    border: 2px solid #fff; /* White border */
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #fff;
+    color: #9d92c9; /* Lavender text on hover */
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive adjustments for the image and text */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 60px 20px;
+      min-height: 450px;
+    }
+    .hero-main-image {
+      max-width: 100%; /* Allow image to be wider on smaller screens */
+      margin-bottom: 30px;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+      .hero-section {
+          padding: 40px 15px;
+          min-height: 400px;
+      }
+      .hero-main-image {
+          margin-bottom: 25px;
+          border-radius: 10px; /* Slightly less rounded on very small screens */
+      }
+      .hero-content h1 {
+          font-size: 2.2rem;
+      }
+      .hero-content p {
+          font-size: 1rem;
+          margin-bottom: 30px;
+      }
+      .hero-buttons {
+          flex-direction: column; /* Stack buttons vertically on small screens */
+          gap: 15px;
+      }
+  }
