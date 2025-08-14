@@ -1,50 +1,102 @@
 /* src/components/MenuItem.css */
-.menu-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .menu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-  }
-  
-  .menu-item-img {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Cover the area, cropping if necessary */
-  }
-  
-  .item-details {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Allows details to take up remaining space */
-  }
-  
-  .item-details h3 {
-    color: #7db9da; /* Blue for item titles */
-    font-size: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-family: 'Playfair Display', serif;
-  }
-  
-  .item-description {
-    color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 15px;
-    flex-grow: 1; /* Pushes price to the bottom */
-  }
-  
-  .item-price {
-    color: #d5afc0; /* Pink for price */
-    font-size: 1.25rem;
-    font-weight: bold;
-    align-self: flex-end; /* Aligns price to the bottom right */
-  }
+
+/* New Color Scheme */
+:root {
+  --lavender: #9d92c9;
+  --blue: #7db9da;
+}
+
+body {
+  background-color: #f4f7f9;
+  font-family: 'Arial', sans-serif;
+}
+
+/* General Section Styling */
+
+.menu-item-section {
+  width: 100%;
+  max-width: 800px; /* Adjust this value if needed */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 00px;
+  background-color: transparent;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.menu-item-section h2 {
+  color: var(--lavender);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Subsection Styling (Build Your Own) */
+.menu-subsection {
+  margin-top: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.menu-subsection h3 {
+  color: var(--blue);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.options-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.options-list li {
+  background-color: #f0f8ff;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.options-list li:hover {
+  background-color: var(--blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Item List Styling (Creative Combinations & The Classics) */
+.items-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nested-menu-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.nested-menu-item:last-child {
+  border-bottom: none;
+}
+
+.nested-menu-item h4 {
+  color: #555;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Simple item style (if needed) */
+.menu-item .item-details {
+  padding: 15px;
+  text-align: center;
+}

@@ -13,7 +13,7 @@ function HeroSection() {
         <p>Handcrafted beverages and delicious bites in a cozy atmosphere.</p>
         <div className="hero-buttons">
           <a href="/menu" className="btn-primary">View Our Menu</a>
-          <a href="/order" className="btn-primary">Order Online</a> 
+          <a href="/about" className="btn-primary">About Us</a> 
         </div>
       </div>
     </section>

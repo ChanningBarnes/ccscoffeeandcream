@@ -31,13 +31,6 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container text-center">
-          <h2 className="section-title text-blue">Ready for a Taste?</h2>
-          <p className="section-description text-blue">Visit us or order online for your daily dose of happiness.</p>
-          <a href="/order" className="btn-primary" style={{marginTop: '20px'}}>Order Now</a>
-        </div>
-      </section>
     </>
   );
 }
