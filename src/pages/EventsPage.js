@@ -1,7 +1,7 @@
 // src/pages/EventsPage.js
 import React from 'react';
-import EventCard from '../components/EventCard';
-import events from '../data/eventData'; // Import your event data
+// import EventCard from '../components/EventCard';
+// import events from '../data/eventData'; // Import your event data
 import '../App.css'; // For general styles
 
 function EventsPage() {
