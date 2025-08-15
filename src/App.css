@@ -334,7 +334,19 @@ main {
   padding-bottom: 20px;
   align-items: stretch; /* Ensures cards are of equal height */
   box-shadow: none;
+
+} .instagram-btn {
+  background-color: #d5afc0; /* You can pick an Instagram-like color */
 }
+
+.instagram-btn:hover {
+  background-color: #7db9da;
+}
+
+.icon-with-text {
+  margin-right: 8px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .main-header .container {

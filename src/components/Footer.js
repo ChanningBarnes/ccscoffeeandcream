@@ -9,12 +9,10 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Your Coffee Shop</h3>
+            <h3>CC's Coffee and Cream</h3>
             <p>Brewing happiness, one cup at a time.</p>
             <div className="social-links">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+              <a href="https://instagram.com/ccscoffeeandcream" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
             </div>
           </div>
           <div className="footer-section">
@@ -23,19 +21,17 @@ function Footer() {
               <li><a href="/menu">Menu</a></li>
               <li><a href="/about">About Us</a></li>
               <li><a href="/contact">Contact</a></li>
-              <li><a href="/order">Order Online</a></li>
+              <li><a href="/events">Events</a></li>
             </ul>
           </div>
           <div className="footer-section">
-            <h3>Visit Us</h3>
-            <p>123 Coffee Bean Lane</p>
-            <p>Flavorville, CA 90210</p>
-            <p>Phone: (555) 123-4567</p>
-            <p>Email: info@yourcoffeeshop.com</p>
+            <h3>Contact Information</h3>
+            <p>info@ccscoffeeandcream.com</p>
+            <p>Located in Charlotte, NC</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Your Coffee Shop. All rights reserved.</p>
+          <p>&copy; {currentYear} CC's Coffee and Cream. All rights reserved.</p>
         </div>
       </div>
     </footer>
