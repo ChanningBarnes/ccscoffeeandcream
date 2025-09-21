@@ -13,6 +13,7 @@ function Footer() {
             <p>Brewing happiness, one cup at a time.</p>
             <div className="social-links">
               <a href="https://instagram.com/ccscoffeeandcream" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+              <a href="https://tiktok.com/ccscoffeeandcream" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></a>
             </div>
           </div>
           <div className="footer-section">
