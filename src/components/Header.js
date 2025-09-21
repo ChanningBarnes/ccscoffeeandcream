@@ -20,7 +20,8 @@ function Header() {
             <li><Link to="/menu">Menu</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/events">Events</Link></li> {/* Changed from /order to /events */}
+            <li><Link to="/events">Events</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
           </ul>
         </nav>
       </div>
