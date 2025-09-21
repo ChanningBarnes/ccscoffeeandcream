@@ -27,6 +27,12 @@ html {
 }
 
 /* Reusable container for page content */
+.page-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Ensures the text inside p and h2 is also centered */
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -247,37 +253,32 @@ main {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 40px;
     margin-top: 40px;
     margin-bottom: 60px;
 }
 
 .about-text {
-    flex: 2; /* Takes more space */
+    flex: 2;
     min-width: 300px;
-}
-
-.about-text h3 {
-    color: #9d92c9; /* Lavender */
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-family: 'Playfair Display', serif;
+    text-align: left;
 }
 
 .about-image {
-    flex: 1; /* Takes less space */
+    flex: 1;
     min-width: 280px;
-    text-align: center;
+    max-width: 500px; /* New: Add a max-width to the container on desktops */
+    margin: 0 auto; /* New: Centers the container in its flex parent when there's space */
 }
 
 .about-image img {
-    max-width:70%;
+    max-width: 100%; /* New: The image will now always be 100% of its parent's width */
     height: auto;
-    border-radius: 10px;
+    display: block;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
-
 .values-grid {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   text-align: center;
@@ -434,16 +435,32 @@ main {
   .footer-section {
     min-width: unset;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .social-links {
       margin-top: 0.5rem;
+      text-align: center;
   }
-  .about-content {
+ .about-content {
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
   }
   .about-text, .about-image {
       min-width: unset;
-      width: 100%;
+      width: 100%; /* Ensure both take full width */
+      margin: 0; /* Remove margin to prevent off-center issues on mobile */
+  }
+  .about-image img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; /* Prevents the image from overflowing its container */
+  }
+  .about-text {
+      text-align: center;
   }
   .reviews-grid, .menu-grid, .contact-info-grid, .values-grid {
       grid-template-columns: 1fr; /* Single column on small screens */
@@ -453,7 +470,10 @@ main {
   }
   .gallery-grid {
         grid-template-columns: 1fr;
-    }
+  }
+  .full-menu-image {
+      max-width: 70%; /* Increase to 70% or more for tablets */
+  }
 }
 
 @media (max-width: 480px) {
@@ -482,4 +502,35 @@ main {
     .contact-card, .value-item {
         padding: 20px;
     }
+    .full-menu-image {
+        max-width: 95%; 
+        border-radius: 0; 
+        box-shadow: none; 
+    }
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .about-text, .about-image {
+        min-width: unset;
+        width: 100%; /* Ensure both take full width */
+        margin: 0; /* Remove margin to prevent off-center issues on mobile */
+    }
+    .about-text {
+        text-align: center;
+
+    }
+    .about-image img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; /* Prevents the image from overflowing its container */
+    }
+    .social-links {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center; /* Horizontally centers the items */
+      align-items: center;     /* Vertically centers the items (good practice) */
+      gap: 1rem;               /* Optional: Adds space between icons if you have more than one */
+}
 }

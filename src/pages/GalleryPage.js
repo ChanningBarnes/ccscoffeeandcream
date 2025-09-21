@@ -5,13 +5,13 @@ import '../App.css'; // For general styles
 // Mock data for your gallery images
 // Updated to use gall1.jpeg to gall25.jpeg
 const galleryImages = [
-  { id: 1, url: '/images/gallery/gall1.jpeg', alt: 'Event photo 1' },
+  { id: 1, url: '/images/gallery/gall13.jpeg', alt: 'Event photo 1' },
   { id: 2, url: '/images/gallery/gall4.jpeg', alt: 'Event photo 2' },
   { id: 3, url: '/images/gallery/gall5.jpeg', alt: 'Event photo 3' },
   { id: 4, url: '/images/gallery/gall8.jpeg', alt: 'Event photo 4' },
   { id: 5, url: '/images/gallery/gall10.jpeg', alt: 'Event photo 5' },
   { id: 6, url: '/images/gallery/gall12.jpeg', alt: 'Event photo 6' },
-  { id: 7, url: '/images/gallery/gall13.jpeg', alt: 'Event photo 7' },
+  { id: 7, url: '/images/gallery/gall1.jpeg', alt: 'Event photo 7' },
   { id: 8, url: '/images/gallery/gall14.jpeg', alt: 'Event photo 8' },
   { id: 9, url: '/images/gallery/gall15.jpeg', alt: 'Event photo 9' },
   { id: 10, url: '/images/gallery/gall16.jpeg', alt: 'Event photo 10' },
