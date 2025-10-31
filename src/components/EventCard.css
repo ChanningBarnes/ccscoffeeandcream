@@ -41,3 +41,27 @@
   line-height: 1.5;
   margin-top: 15px;
 }
+
+.event-address {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.event-address i {
+  margin-right: 8px;
+  color: #9d92c9; /* Lavender for the map icon */
+}
+
+.address-link {
+  color: #7db9da; /* Blue for the link */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.address-link:hover {
+  color: #5a9dc4; /* Darker blue on hover */
+  text-decoration: underline;
+}

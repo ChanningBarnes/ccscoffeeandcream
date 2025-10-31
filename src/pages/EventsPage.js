@@ -6,17 +6,12 @@ import '../App.css'; // For general styles
 
 function EventsPage() {
   return (
-    <div className="events-grid">
-        {events.map(event => (
-          <EventCard key={event.id} event={event} />
-        ))}
-      </div>
-      
-      /* <div className="events-grid">
-        {events.map(event => (
-          <EventCard key={event.id} event={event} />
-        ))}
-      </div> */
+    <>
+          <h1 className="page-title">Upcoming Events</h1>
+      {events.map(event => (
+        <EventCard key={event.id} event={event} />
+      ))}
+    </>
   );
 }
 
