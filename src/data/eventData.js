@@ -1,6 +1,14 @@
 // src/data/eventData.js
 const events = [
   {
+    id: 0,
+    title: 'Lockhart-Taylor Center Popup',
+    date: 'Saturday, November 15th 2025',
+    time: '8:00AM - 5:00PM',
+    description: 'A popup event at the Lockhart-Taylor Center featuring local artisans and crafts.',
+    address: '514 Washington Street, Wadesboro, NC 28170 - Ingram Room'
+  },
+  {
     id: 1,
     title: 'Treehouse Vineyard Christmas Sip & Shop',
     date: 'Saturday, December 13th 2025',
