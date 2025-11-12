@@ -5,8 +5,8 @@ const events = [
     title: 'Lockhart-Taylor Center Popup',
     date: 'Saturday, November 15th 2025',
     time: '8:00AM - 5:00PM',
-    description: 'A popup event at the Lockhart-Taylor Center featuring local artisans and crafts.',
-    address: '514 Washington Street, Wadesboro, NC 28170 - Ingram Room'
+    description: 'A popup event at the Lockhart-Taylor Center in the Ingram Room featuring local artisans and crafts.',
+    address: '514 Washington Street, Wadesboro, NC 28170'
   },
   {
     id: 1,
