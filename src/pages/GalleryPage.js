@@ -1,9 +1,7 @@
 // src/pages/GalleryPage.js
-import React from 'react';
-import '../App.css'; // For general styles
+import React, { useState, useEffect } from 'react';
+import '../App.css';
 
-// Mock data for your gallery images
-// Updated to use gall1.jpeg to gall25.jpeg
 const galleryImages = [
   { id: 1, url: '/images/gallery/gall13.jpeg', alt: 'Event photo 1' },
   { id: 2, url: '/images/gallery/gall4.jpeg', alt: 'Event photo 2' },
@@ -25,20 +23,92 @@ const galleryImages = [
 ];
 
 function GalleryPage() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    function handleKey(e) {
+      if (!lightboxOpen) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    }
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxOpen, currentIndex]);
+
+  function openLightbox(index) {
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+  }
+
+  function closeLightbox() {
+    setLightboxOpen(false);
+  }
+
+  function prevImage() {
+    setCurrentIndex((i) => (i - 1 + galleryImages.length) % galleryImages.length);
+  }
+
+  function nextImage() {
+    setCurrentIndex((i) => (i + 1) % galleryImages.length);
+  }
+
   return (
-    <div className="page-section container">
-      <h2 className="section-title">Our Gallery</h2>
-      <p className="section-description">
-        Browse through some of the memorable moments from our past events and gatherings.
-      </p>
+    <section className="gallery-page">
+      <h1 className="page-title">Our Gallery</h1>
+      <p className="page-subtitle">Memorable moments from our events</p>
+
       <div className="gallery-grid">
-        {galleryImages.map(image => (
-          <div key={image.id} className="gallery-item">
-            <img src={image.url} alt={image.alt} />
-          </div>
+        {galleryImages.map((image, index) => (
+          <figure key={image.id} className={`gallery-item scroll-animate delay-${(index % 6) + 1}`}>
+            <button
+              type="button"
+              className="thumb"
+              onClick={() => openLightbox(index)}
+              aria-label={`Open ${image.alt}`}
+            >
+              <img src={image.url} alt={image.alt} loading="lazy" />
+            </button>
+          </figure>
         ))}
       </div>
-    </div>
+
+      {lightboxOpen && (
+        <div className="lightbox-overlay" onClick={closeLightbox} role="dialog" aria-modal="true">
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-figure">
+              <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">×</button>
+              <img
+                className="lightbox-img"
+                src={galleryImages[currentIndex].url}
+                alt={galleryImages[currentIndex].alt}
+              />
+            </div>
+            <button className="lightbox-prev" onClick={prevImage} aria-label="Previous">‹</button>
+            <button className="lightbox-next" onClick={nextImage} aria-label="Next">›</button>
+          </div>
+        </div>
+      )}
+    </section>
   );
 }
 

@@ -11,7 +11,7 @@
     position: relative;
     overflow: hidden; /* Hide anything that goes outside */
   }
-  
+
   .hero-section::before { /* Overlay for better text readability */
     content: '';
     position: absolute;
@@ -22,7 +22,7 @@
     background-color:transparent; /* Dark overlay */
     z-index: 1;
   }
-  
+
   .hero-content {
     position: relative;
     z-index: 1;
@@ -32,8 +32,9 @@
     align-items: center; /* Center items horizontally within hero-content */
     justify-content: center;
     background-color: white;
+    animation: fadeInUp 0.8s ease-out;
   }
-  
+
   .hero-main-image {
     max-width: 90%; /* Adjust size relative to its container */
     height: auto;
@@ -41,32 +42,40 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Prominent shadow for the image */
     margin-bottom: 40px; /* Space between image and text */
     object-fit: cover; /* Ensure image covers its area well */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
-  
+
+  .hero-main-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  }
+
   .hero-content h1 {
     font-size: 3.8rem;
     margin-bottom: 20px;
     font-family: 'Playfair Display', serif;
     color: #9d92c9;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
   }
-  
+
   .hero-content p {
     font-size: 1.4rem;
     margin-bottom: 40px;
     line-height: 1.5;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
-  
+
   .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
     background-color: transparent;
     border: none;
-    box-shadow: none; 
+    box-shadow: none;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
   }
-  
+
   /* Reusing existing btn-primary from App.css, adding btn-secondary */
   .btn-secondary {
     display: inline-block;
@@ -81,13 +90,13 @@
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   }
-  
+
   .btn-secondary:hover {
     background-color: #fff;
     color: #9d92c9; /* Lavender text on hover */
     transform: translateY(-2px);
   }
-  
+
   /* Responsive adjustments for the image and text */
   @media (max-width: 768px) {
     .hero-section {
@@ -105,7 +114,7 @@
       font-size: 1.2rem;
     }
   }
-  
+
   @media (max-width: 480px) {
       .hero-section {
           padding: 40px 15px;

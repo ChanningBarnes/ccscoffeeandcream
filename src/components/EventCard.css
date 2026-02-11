@@ -5,13 +5,13 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   padding: 25px;
   text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%; /* Ensure all cards in the grid have equal height */
 }
 
 .event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .event-title {
@@ -33,6 +33,12 @@
 .event-date i,
 .event-time i {
   margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover .event-date i,
+.event-card:hover .event-time i {
+  transform: scale(1.2);
 }
 
 .event-description {

@@ -17,10 +17,10 @@ function EventCard({ event }) {
       </p>
       <p className="event-description">{event.description}</p>
       <p className="event-address">
-        <i className="fas fa-map-marker-alt"></i> 
-        <a 
-          href={googleMapsUrl} 
-          target="_blank" 
+        <i className="fas fa-map-marker-alt"></i>
+        <a
+          href={googleMapsUrl}
+          target="_blank"
           rel="noopener noreferrer"
           className="address-link"
         >

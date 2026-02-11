@@ -1,570 +1,498 @@
 /* src/App.css */
 
-/* Basic body and font styles */
+/* Base Styles */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, modern font */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f8f8; /* A very light off-white background */
-  color: #333; /* Darker text for readability */
+  background-color: #f8f8f8;
+  color: #333;
   line-height: 1.6;
 }
 
-/* Base font sizes for responsiveness */
 html {
-  font-size: 16px; /* Base for rem units */
-}
-@media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-}
-@media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-/* Reusable container for page content */
-.page-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center; /* Ensures the text inside p and h2 is also centered */
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px 20px 20px;
-}
-
-/* Styling for the main content area */
+/* Main Content */
 main {
-  flex-grow: 1; /* Allows main content to fill available space */
+  flex-grow: 1;
 }
 
-/* Reusable section styling */
-.section-padding {
-  padding: 80px 0; /* Generous vertical padding */
+/* ============================
+   Page Layout Styles
+   ============================ */
+
+.page-title {
+  color: #7db9da;
+  font-size: 2.8rem;
+  margin: 40px 20px 10px;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  animation: fadeInDown 0.6s ease;
+}
+
+.page-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 20px 40px;
+  animation: fadeIn 0.6s ease 0.2s both;
 }
 
 .section-title {
-  color: #7db9da; /* Blue for main headings */
+  color: #7db9da;
   font-size: 2.8rem;
   margin-bottom: 20px;
   font-family: 'Playfair Display', serif;
   text-align: center;
 }
 
-.section-subtitle {
-  color: #9d92c9; /* Lavender for sub-headings */
-  font-size: 1.8rem;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-}
-
-
 .section-description {
   color: #555;
   font-size: 1.15rem;
   max-width: 800px;
-  margin: 0 auto 40px auto; /* Center paragraph text and add bottom margin */
+  margin: 0 auto 40px auto;
   text-align: center;
 }
 
-/* Page title styles for individual pages */
-.page-title {
-  color: #7db9da; /* Blue for page titles */
-  font-size: 3.2rem;
-  margin-bottom: 20px;
-  margin-top: 40px;
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  font-weight: 600;
-}
+/* ============================
+   Events Page
+   ============================ */
 
-.page-description {
-  color: #555;
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto 50px auto;
-  text-align: center;
-  line-height: 1.7;
-}
-
-/* Events page specific styles */
 .events-page {
-  padding-top: 20px;
   padding-bottom: 60px;
 }
 
-.events-header {
-  background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
-  padding: 60px 0;
-  margin-bottom: 40px;
+.events-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.text-white {
-    color: #fff !important;
+.events-list article {
+  background: transparent;
 }
 
-.text-blue {
-    color: #7db9da !important;
+/* ============================
+   Gallery Page
+   ============================ */
+
+.gallery-page {
+  padding-bottom: 60px;
 }
 
-/* Background colors */
-.bg-light-gray {
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 4/3;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item .thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
   background-color: #f0f0f0;
+  transition: transform 0.4s ease;
 }
 
-.bg-lavender-light {
-    background-color: #9d92c9; /* Lavender */
+/* Lightbox / slideshow styles */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
 }
 
-.bg-pink-light {
-    background-color: #d5afc0; /* Pink */
+.lightbox-content {
+  position: relative;
+  max-width: 440px;
+  width: calc(100% - 80px);
+  max-height: 40vh;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Button styles */
+.lightbox-figure {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  color: #222;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  z-index: 3;
+}
+
+.lightbox-close {
+  top: 40px;
+  right: 40px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+@media (max-width: 600px) {
+  .lightbox-prev { left: 20px; }
+  .lightbox-next { right: 20px; }
+  .lightbox-close { top: 20px; right: 20px; }
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ============================
+   Contact Page
+   ============================ */
+
+.contact-page {
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  color: #9d92c9;
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  color: #7db9da;
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-card p {
+  color: #666;
+  margin: 0 0 20px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* ============================
+   About Page
+   ============================ */
+
+.about-page {
+  padding: 0 20px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.about-content p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-image {
+  margin: 0;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.02);
+}
+
+/* ============================
+   Menu Page
+   ============================ */
+
+.menu-image-page {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.full-menu-image {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.full-menu-image:hover {
+  transform: scale(1.02);
+}
+
+/* ============================
+   Buttons
+   ============================ */
+
 .btn-primary {
   display: inline-block;
-  background-color: #d5afc0; /* Pink button */
+  background-color: #d5afc0;
   color: #fff;
-  padding: 18px 35px;
+  padding: 16px 32px;
   border: none;
   border-radius: 8px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
   font-family: 'Quicksand', sans-serif;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: none; 
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #d5afc0; /* Blue on hover */
+  background-color: #7db9da;
   transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(125, 185, 218, 0.4);
 }
 
 .btn-primary-small {
   display: inline-block;
-  background-color: #d5afc0; /* Pink button */
+  background-color: #d5afc0;
   color: #fff;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 15px;
+  transition: all 0.3s ease;
 }
 
 .btn-primary-small:hover {
   background-color: #7db9da;
-  transform: translateY(-1px);
-}
-
-/* Image styles */
-.full-width-img {
-  width: 100%;
-  max-width: 800px; /* Constrain wide images */
-  height: auto;
-  border-radius: 10px;
-  margin: 30px auto; /* Center and add margin */
-  display: block; /* For centering with margin: auto */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Grids for content */
-.reviews-grid, .menu-grid, .contact-info-grid, .values-grid {
-  display: grid;
-  gap: 30px; /* Space between grid items */
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.reviews-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
-  justify-items: center; /* Center items in their grid cells */
-  box-shadow: none;
-}
-
-.menu-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  box-shadow: none;
-}
-
-.contact-info-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  margin-bottom: 40px;
-}
-
-.contact-card {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-.contact-card h3 {
-  color: #7db9da; /* Blue */
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-}
-.contact-card p {
-  margin-bottom: 8px;
-  font-size: 1rem;
-  color: #666;
-}
-
-.contact-highlight {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #d5afc0; /* Pink highlight */
-    margin-top: 15px;
-}
-
-/* Form styles */
-.contact-form-section {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    margin-top: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-form .form-group {
-  margin-bottom: 20px;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #555;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width: calc(100% - 20px); /* Account for padding */
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.contact-form textarea {
-  resize: vertical; /* Allow vertical resizing */
-  min-height: 120px;
-}
-
-.contact-form button[type="submit"] {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.2rem;
-}
-
-/* Map Section */
-.map-section {
-    margin-top: 50px;
-    text-align: center;
-}
-
-/* About Page Specific Styles */
-.about-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    margin-bottom: 60px;
-}
-
-.about-text {
-    flex: 2;
-    min-width: 300px;
-    text-align: left;
-}
-
-.about-image {
-    flex: 1;
-    min-width: 280px;
-    max-width: 500px; /* New: Add a max-width to the container on desktops */
-    margin: 0 auto; /* New: Centers the container in its flex parent when there's space */
-}
-
-.about-image img {
-    max-width: 100%; /* New: The image will now always be 100% of its parent's width */
-    height: auto;
-    display: block;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-.values-grid {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  text-align: center;
-  margin-top: 30px;
-}
-
-.value-item {
-  background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.value-item h4 {
-  color: #9d92c9;
-  font-size: 1.3rem;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.value-item p {
-  color: black;
-  font-size: 0.95rem;
-  margin-bottom: 0;
-}
-
-
-/* Menu Page Specific Styles */
-.menu-category {
-    margin-bottom: 60px; /* Space between categories */
-    padding-top: 30px;
-    border-bottom: 1px solid #eee; /* Separator */
-    padding-bottom: 30px;
-    box-shadow: none;
-}
-
-.menu-category:last-child {
-    border-bottom: none; /* No border for the last category */
-    margin-bottom: 0;
-}
-
-.category-title {
-  color: #9d92c9; /* Lavender for category titles */
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-}
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: stretch; /* Ensures cards are of equal height */
+  transform: translateY(-2px);
 }
 
 .instagram-btn {
-  background-color: #d5afc0; /* You can pick an Instagram-like color */
+  background-color: #d5afc0;
 }
 
 .instagram-btn:hover {
   background-color: #7db9da;
 }
 
-.icon-with-text {
-  margin-right: 8px;
-}
-.menu-image-page {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden; /* Prevent horizontal scrollbar on large images */
-  background-color: #f8f8f8; /* Match the body background color */
-}
+/* ============================
+   Scroll Animations
+   ============================ */
 
-.full-menu-image {
-  max-width: 40%;
-  height: auto;
-  display: block; /* Ensures the image is a block element */
-  margin: 0 auto; /* Centers the image */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; /* Optional: adds subtle rounded corners */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+
+/* ============================
+   Keyframe Animations
+   ============================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* ============================
+   Responsive Styles
+   ============================ */
 
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
-  .main-header .container {
-    flex-direction: column;
-    text-align: center;
+  html {
+    font-size: 15px;
   }
-  .main-header .logo-img {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  .main-nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .main-nav li {
-    margin: 0 15px 10px;
-  }
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  .hero-content p {
-    font-size: 1.2rem;
-  }
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .section-title {
+
+  .page-title {
     font-size: 2.2rem;
+    margin-top: 30px;
   }
-  .section-description {
-    font-size: 1rem;
+
+  .events-list,
+  .gallery-grid,
+  .contact-cards {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
   }
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+
+  .about-page {
+    padding: 0 15px 40px;
   }
-  .footer-section {
-    min-width: unset;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+
+  .about-content {
+    padding: 30px 20px;
   }
-  .social-links {
-      margin-top: 0.5rem;
-      text-align: center;
-  }
- .about-content {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-  .about-text, .about-image {
-      min-width: unset;
-      width: 100%; /* Ensure both take full width */
-      margin: 0; /* Remove margin to prevent off-center issues on mobile */
-  }
-  .about-image img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%; /* Prevents the image from overflowing its container */
-  }
-  .about-text {
-      text-align: center;
-  }
-  .reviews-grid, .menu-grid, .contact-info-grid, .values-grid {
-      grid-template-columns: 1fr; /* Single column on small screens */
-  }
-  .events-grid {
-      grid-template-columns: 1fr;
-  }
-  .gallery-grid {
-        grid-template-columns: 1fr;
-  }
+
   .full-menu-image {
-      max-width: 70%; /* Increase to 70% or more for tablets */
+    max-width: 90%;
   }
 }
 
 @media (max-width: 480px) {
-    .section-padding {
-        padding: 50px 0;
-    }
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    .hero-content p {
-        font-size: 1rem;
-    }
-    .btn-primary, .btn-secondary {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-    .main-header .logo-img {
-      height: 50px;
-    }
-    .main-header .logo-text {
-      font-size: 1.8rem;
-    }
-    .category-title {
-      font-size: 1.8rem;
-    }
-    .contact-card, .value-item {
-        padding: 20px;
-    }
-    .full-menu-image {
-        max-width: 95%; 
-        border-radius: 0; 
-        box-shadow: none; 
-    }
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .about-text, .about-image {
-        min-width: unset;
-        width: 100%; /* Ensure both take full width */
-        margin: 0; /* Remove margin to prevent off-center issues on mobile */
-    }
-    .about-text {
-        text-align: center;
+  html {
+    font-size: 14px;
+  }
 
-    }
-    .about-image img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%; /* Prevents the image from overflowing its container */
-    }
-    .social-links {
-      margin-top: 0.5rem;
-      display: flex;
-      justify-content: center; /* Horizontally centers the items */
-      align-items: center;     /* Vertically centers the items (good practice) */
-      gap: 1rem;               /* Optional: Adds space between icons if you have more than one */
-}
+  .page-title {
+    font-size: 1.9rem;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .btn-primary {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+
+  .full-menu-image {
+    max-width: 100%;
+    border-radius: 0;
+  }
 }

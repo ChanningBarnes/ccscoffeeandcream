@@ -1,21 +1,48 @@
 // src/pages/AboutPage.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../App.css';
 
 function AboutPage() {
-  return (
-    <div className="page-section container">
-      <h2 className="section-title">Our Passion for Coffee</h2>
-      <p className="section-description">
-        CC’s Coffee & Cream owner, Cortlyn,  is a seasoned beverage professional with a passion for community and making great drinks. Together with her mother, we are popping up around Charlotte and the surrounding areas, spreading joy one drink at a time. Cortlyn is a vegetarian and prides herself on running a vegan business.
-As a women-owned, minority business, our goal is to support other women-owned minority businesses.
-      </p>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-  
-        <div className="about-image">
-          <img src="/images/momandcort.jpeg" alt="Our Barista preparing coffee" />
-        </div>
-      </div>
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className="about-page">
+      <h1 className="page-title">Our Passion for Coffee</h1>
+
+      <article className="about-content scroll-animate">
+        <p>
+          CC's Coffee & Cream owner, Cortlyn, is a seasoned beverage professional
+          with a passion for community and making great drinks. Together with her
+          mother, we are popping up around Charlotte and the surrounding areas,
+          spreading joy one drink at a time.
+        </p>
+        <p>
+          Cortlyn is a vegetarian and prides herself on running a vegan business.
+          As a women-owned, minority business, our goal is to support other
+          women-owned minority businesses.
+        </p>
+      </article>
+
+      <figure className="about-image scroll-animate delay-2">
+        <img src="/images/momandcort.jpeg" alt="Cortlyn and Mom" />
+      </figure>
+    </section>
   );
 }
 

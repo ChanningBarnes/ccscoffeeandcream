@@ -5,11 +5,13 @@ import '../components/MenuItem.css'; // Import the new styles
 
 function MenuPage() {
   return (
+    <div className="page-enter">
       <img
         src="/images/menu.PNG" // Replace with the path to your menu image
         alt="Full menu of CC's Coffee and Cream"
         className="full-menu-image"
       />
+    </div>
   );
 }
 
