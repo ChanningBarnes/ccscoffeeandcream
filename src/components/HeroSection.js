@@ -6,16 +6,10 @@ function HeroSection() {
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <div className="hero-image-container">
-          <video className="hero-video" autoPlay muted loop>
-            <source src="/images/coffeeshort.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          {/* <div className="hero-image-overlay">
-            <h1>Nostalgia You Can Taste</h1>
-          </div> */}
-        </div>
+        {/* Add the image here, before the text */}
+        <img src="/images/cchero.png" alt="Coffee pouring into a cup" className="hero-main-image" />
 
+        <h1>Nostalgia You Can Taste</h1>
         <div className="hero-buttons">
           <a href="/events" className="btn-primary">Upcoming Events</a>
         </div>
