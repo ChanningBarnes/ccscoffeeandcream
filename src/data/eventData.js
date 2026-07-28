@@ -2,27 +2,35 @@
 const events = [
   {
     id: 1,
-    title: 'Troubadour Booksellers Pop-Up',
-    date: 'Saturday, March 14th 2026',
-    time: '11:00AM - 6:00PM',
-    description: 'Join us at Troubadour Booksellers for a delicious coffee while you browse their selection of books!',
-    address: '1721 Sardis Road N, Charlotte, NC 28270'
+    title: 'Crunch Fitness Matthews',
+    date: '7/29',
+    time: '5:00PM - 8:00PM',
+    description: 'We will be serving coffee and connecting with the community at Crunch Fitness Matthews.',
+    address: '10404 E Independence Blvd, Matthews, NC 28105, United States'
   },
-    {
+  {
     id: 2,
-    title: 'Stegall Market Pop-Up',
-    date: 'Saturday, April 25th 2026',
-    time: '10:00AM - 2:00PM',
-    description: 'Join us at Stegall Market for a day of delicious coffee with our new seasonal menu!',
-    address: '6411 Old Monroe Road, Indian Trail, NC 28079'
+    title: 'Stegall Product Market',
+    date: '8/2',
+    time: '11:00AM - 4:00PM',
+    description: 'Join us at Stegall Product Market for a great day of coffee and community!',
+    address: '6411 Old Monroe Rd, Indian Trail, NC 28079, United States'
   },
   {
     id: 3,
-    title: 'Stegall Market Pop-Up',
-    date: 'Saturday, May 9th 2026',
+    title: 'Stegall Product Market',
+    date: '9/12',
     time: '10:00AM - 2:00PM',
-    description: 'Join us at Stegall Market for a day of delicious coffee with our new seasonal menu!',
-    address: '6411 Old Monroe Road, Indian Trail, NC 28079'
+    description: 'Join us at Stegall Product Market for a great day of coffee and community!',
+    address: '6411 Old Monroe Rd, Indian Trail, NC 28079, United States'
+  },
+  {
+    id: 4,
+    title: 'Stegall Product Market',
+    date: '10/24',
+    time: '10:00AM - 2:00PM',
+    description: 'Join us at Stegall Product Market for a great day of coffee and community!',
+    address: '6411 Old Monroe Rd, Indian Trail, NC 28079, United States'
   }
 ];
 
