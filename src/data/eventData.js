@@ -2,22 +2,14 @@
 const events = [
   {
     id: 1,
-    title: 'Crunch Fitness Arboretum',
-    date: '8/29',
+    title: 'Crunch FitnessBallantyne Pop-Up',
+    date: '9/16',
     time: '9:00AM - 1:00PM',
-    description: 'Stop by Crunch Fitness Arboretum for fresh coffee and a welcoming community atmosphere!',
-    address: '3413 Pineville-Matthews Rd, Charlotte, NC 28226, United States'
+    description: 'Come join us at Crunch Fitness Ballantyne for a pop-up event!',
+    address: '16045 Johnston Road Suite A, Charlotte, NC 28277, United States'
   },
   {
     id: 2,
-    title: 'Crunch Fitness Arboretum',
-    date: '8/31',
-    time: '9:00AM - 1:00PM',
-    description: 'Stop by Crunch Fitness Arboretum for fresh coffee and a welcoming community atmosphere!',
-    address: '3413 Pineville-Matthews Rd, Charlotte, NC 28226, United States'
-  },
-  {
-    id: 3,
     title: 'Stegall Product Market',
     date: '10/24',
     time: '10:00AM - 2:00PM',
