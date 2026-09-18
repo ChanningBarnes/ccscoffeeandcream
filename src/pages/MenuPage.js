@@ -7,7 +7,7 @@ function MenuPage() {
   return (
     <div className="page-enter">
       <img
-        src="/images/Menu2.PNG" // Replace with the path to your menu image
+        src="/images/FallMenu.PNG" // Replace with the path to your menu image
         alt="Full menu of CC's Coffee and Cream"
         className="full-menu-image"
       />

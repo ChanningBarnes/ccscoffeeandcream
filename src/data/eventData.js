@@ -2,7 +2,7 @@
 const events = [
   {
     id: 1,
-    title: 'Crunch FitnessBallantyne Pop-Up',
+    title: 'Crunch Fitness Ballantyne Pop-Up',
     date: '9/16',
     time: '9:00AM - 1:00PM',
     description: 'Come join us at Crunch Fitness Ballantyne for a pop-up event!',
