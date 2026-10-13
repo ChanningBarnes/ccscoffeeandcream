@@ -2,14 +2,6 @@
 const events = [
   {
     id: 1,
-    title: 'Crunch Fitness Ballantyne Pop-Up',
-    date: '9/16',
-    time: '9:00AM - 1:00PM',
-    description: 'Come join us at Crunch Fitness Ballantyne for a pop-up event!',
-    address: '16045 Johnston Road Suite A, Charlotte, NC 28277, United States'
-  },
-  {
-    id: 2,
     title: 'Stegall Product Market',
     date: '10/24',
     time: '10:00AM - 2:00PM',
