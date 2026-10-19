@@ -15,10 +15,17 @@ function OrderPage() {
         </p>
       </header>
 
-      <div className="order-panel">
-        <div className="order-details">
-          <h2>CC&apos;s Coffee &amp; Cream on Cash App</h2>
-          <br/>
+      <div className="order-options">
+        <div className="order-qr">
+          <div className="order-qr-code">
+            <QRCodeSVG
+              value={cashAppStoreUrl}
+              size={220}
+              level="M"
+              title="QR code for CC's Coffee & Cream Cash App store"
+            />
+          </div>
+          <p>Scan to open our Cash App store</p>
           <a
             className="btn-primary order-link"
             href={cashAppStoreUrl}
@@ -33,18 +40,6 @@ function OrderPage() {
             />
             Order Now
           </a>
-        </div>
-
-        <div className="order-qr">
-          <div className="order-qr-code">
-            <QRCodeSVG
-              value={cashAppStoreUrl}
-              size={220}
-              level="M"
-              title="QR code for CC's Coffee & Cream Cash App store"
-            />
-          </div>
-          <p>Scan to open our Cash App store</p>
         </div>
       </div>
     </section>

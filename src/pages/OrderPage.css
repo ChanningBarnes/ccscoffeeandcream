@@ -21,50 +21,22 @@
   margin: 0 auto 32px;
 }
 
-.order-page .order-panel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  max-width: 820px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.order-page .order-details {
+.order-page .order-options {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 340px;
-  padding: 40px;
-  background: #9d92c9;
-  color: #fff;
-  text-align: center;
-}
-
-.order-page .order-details h2 {
-  margin: 0 0 12px;
-  color: #fff;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  line-height: 1.25;
-}
-
-.order-page .order-details p {
-  max-width: 290px;
-  margin: 0 0 24px;
-  color: #fff;
-  font-size: 1rem;
+  max-width: 460px;
+  margin: 0 auto;
 }
 
 .order-page .order-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-size: 1rem;
+  gap: 14px;
+  min-width: 260px;
+  padding: 20px 32px;
+  margin-top: 20px;
+  font-size: 1.3rem;
 }
 
 .order-page .cash-app-icon {
@@ -75,7 +47,7 @@
 }
 
 .order-page .order-link:focus-visible {
-  outline: 3px solid #fff;
+  outline: 3px solid #9d92c9;
   outline-offset: 4px;
 }
 
@@ -116,21 +88,27 @@
     margin-bottom: 24px;
   }
 
-  .order-page .order-panel {
-    grid-template-columns: 1fr;
+  .order-page .order-options {
+    width: 100%;
   }
 
-  .order-page .order-details {
-    min-height: 300px;
-    padding: 32px 24px;
+  .order-page .order-link {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 28px;
+    margin-top: 50px;
+    font-size: 2rem;
   }
 
-  .order-page .order-details h2 {
-    font-size: 1.6rem;
+  .order-page .order-qr-code,
+  .order-page .order-qr p {
+    display: none;
   }
 
   .order-page .order-qr {
-    display: none;
+    width: 100%;
+    padding: 0;
   }
 }
 
