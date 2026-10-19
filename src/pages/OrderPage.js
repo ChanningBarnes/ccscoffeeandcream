@@ -1,20 +1,53 @@
 // src/pages/OrderPage.js
 import React from 'react';
-import '../App.css';
+import { QRCodeSVG } from 'qrcode.react';
+import './OrderPage.css';
+
+const cashAppStoreUrl = 'https://cash.app/$ccscoffeeandcream';
 
 function OrderPage() {
   return (
-    <div className="page-section container">
-      <h2 className="section-title">Order Online</h2>
-      <p className="section-description">
-        Coming soon! We're working on making your favorite coffee just a click away. In the meantime, please visit us!
-      </p>
-      <div style={{ padding: '30px', backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }}>
-        <p>Please call us directly to place a pick-up order:</p>
-        <p className="contact-highlight">(555) 123-4567</p>
+    <section className="order-page">
+      <header className="order-intro">
+        <h1 className="page-title">Order Online</h1>
+        <p className="page-subtitle">
+          Visit our online store to order one of our delicious bottled lattes!
+        </p>
+      </header>
+
+      <div className="order-panel">
+        <div className="order-details">
+          <h2>CC&apos;s Coffee &amp; Cream on Cash App</h2>
+          <br/>
+          <a
+            className="btn-primary order-link"
+            href={cashAppStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="cash-app-icon"
+              src="/images/cashapp.svg.webp"
+              alt=""
+              aria-hidden="true"
+            />
+            Order Now
+          </a>
+        </div>
+
+        <div className="order-qr">
+          <div className="order-qr-code">
+            <QRCodeSVG
+              value={cashAppStoreUrl}
+              size={220}
+              level="M"
+              title="QR code for CC's Coffee & Cream Cash App store"
+            />
+          </div>
+          <p>Scan to open our Cash App store</p>
+        </div>
       </div>
-      {/* Here you would integrate your actual ordering system/forms */}
-    </div>
+    </section>
   );
 }
 

@@ -57,6 +57,7 @@ function Header() {
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/events">Events</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/order" className="order-nav-link">Order</Link></li>
           </ul>
         </nav>
 

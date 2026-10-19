@@ -1,5 +1,6 @@
 // src/components/HeroSection.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HeroSection.css';
 
 function HeroSection() {
@@ -11,7 +12,8 @@ function HeroSection() {
 
         <h1>Nostalgia You Can Taste</h1>
         <div className="hero-buttons">
-          <a href="/events" className="btn-primary">Upcoming Events</a>
+          <Link to="/events" className="btn-primary">Upcoming Events</Link>
+          <Link to="/order" className="btn-primary">Order Online</Link>
         </div>
       </div>
     </section>

@@ -15,7 +15,6 @@ function EventCard({ event }) {
       <p className="event-time">
         <i className="far fa-clock"></i> {event.time}
       </p>
-      <p className="event-description">{event.description}</p>
       <p className="event-address">
         <i className="fas fa-map-marker-alt"></i>
         <a

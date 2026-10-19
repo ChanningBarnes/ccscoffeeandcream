@@ -2,20 +2,40 @@
 const events = [
   {
     id: 1,
-    title: 'Crunch Fitness Ballantyne Pop-Up',
-    date: '9/16',
-    time: '9:00AM - 1:00PM',
-    description: 'Come join us at Crunch Fitness Ballantyne for a pop-up event!',
-    address: '16045 Johnston Road Suite A, Charlotte, NC 28277, United States'
+    title: 'Stegall Product Market',
+    date: 'Saturday, October 24th',
+    time: '9:00AM - 2:00PM',
+    address: '6411 Old Monroe Rd, Indian Trail, NC 28079, United States'
   },
   {
     id: 2,
-    title: 'Stegall Product Market',
-    date: '10/24',
-    time: '10:00AM - 2:00PM',
-    description: 'Join us at Stegall Product Market for a great day of coffee and community!',
-    address: '6411 Old Monroe Rd, Indian Trail, NC 28079, United States'
-  }
+    title: 'K|LA Boutique Pop-Up',
+    date: 'Sunday, October 25th',
+    time: '11:00AM - 2:00PM',
+    address: 'K|LA Boutique, 4123 Park Rd, Charlotte, NC 28209, United States'
+  },
+  {
+    id: 3,
+    title: 'K|LA Boutique Pop-Up',
+    date: 'Sunday, November 14th',
+    time: '11:00AM - 2:00PM',
+    address: 'K|LA Boutique, 4123 Park Rd, Charlotte, NC 28209, United States'
+  },
+  {
+    id: 4,
+    title: 'Anson County Farmers Market Thanksgiving Event',
+    date: 'Saturday, November 21st',
+    time: '1:00PM - 5:00PM',
+    address: '1736 US-52, Wadesboro, NC 28170, United States'
+  },
+  {
+    id: 5,
+    title: 'Union County Farmers Market',
+    date: 'Saturday, December 12th',
+    time: '8:00AM - 12:00PM',
+    address: '805 Skyway Dr, Monroe, NC 28110, United States'
+  },
+
 ];
 
 export default events;

@@ -1,4 +1,3 @@
-// src/pages/EventsPage.js
 import React, { useEffect } from 'react';
 import EventCard from '../components/EventCard';
 import events from '../data/eventData';

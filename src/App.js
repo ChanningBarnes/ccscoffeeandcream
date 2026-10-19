@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import EventsPage from './pages/EventsPage';
 import GalleryPage from './pages/GalleryPage';
+import OrderPage from './pages/OrderPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/events" element={<EventsPage />} /> 
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/order" element={<OrderPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

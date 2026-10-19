@@ -1,0 +1,143 @@
+.order-page {
+  box-sizing: border-box;
+  width: min(100% - 40px, 960px);
+  margin: 0 auto;
+  padding: 8px 0 56px;
+}
+
+.order-page div {
+  box-sizing: border-box;
+  margin-bottom: 0;
+  padding: 0;
+  border-radius: 0;
+  text-align: inherit;
+}
+
+.order-page .page-title {
+  margin: 0 0 8px;
+}
+
+.order-page .page-subtitle {
+  margin: 0 auto 32px;
+}
+
+.order-page .order-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  max-width: 820px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.order-page .order-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  padding: 40px;
+  background: #9d92c9;
+  color: #fff;
+  text-align: center;
+}
+
+.order-page .order-details h2 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  line-height: 1.25;
+}
+
+.order-page .order-details p {
+  max-width: 290px;
+  margin: 0 0 24px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.order-page .order-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.order-page .cash-app-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.order-page .order-link:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.order-page .order-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  text-align: center;
+}
+
+.order-page .order-qr-code {
+  display: inline-flex;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #e8e4ef;
+  border-radius: 10px;
+}
+
+.order-page .order-qr p {
+  margin: 16px 0 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .order-page {
+    width: min(100% - 32px, 460px);
+    padding-bottom: 36px;
+  }
+
+  .order-page .page-title {
+    font-size: 2.3rem;
+  }
+
+  .order-page .page-subtitle {
+    margin-bottom: 24px;
+  }
+
+  .order-page .order-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .order-page .order-details {
+    min-height: 300px;
+    padding: 32px 24px;
+  }
+
+  .order-page .order-details h2 {
+    font-size: 1.6rem;
+  }
+
+  .order-page .order-qr {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .order-page .order-link,
+  .order-page .order-link:hover {
+    transform: none;
+    transition: none;
+  }
+}

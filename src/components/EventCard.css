@@ -41,13 +41,6 @@
   transform: scale(1.2);
 }
 
-.event-description {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 15px;
-}
-
 .event-address {
   color: #555;
   font-size: 1rem;

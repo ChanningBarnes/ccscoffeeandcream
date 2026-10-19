@@ -42,6 +42,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 
 .main-nav li {
@@ -75,6 +76,29 @@
 
 .main-nav a:hover::after {
   width: 100%;
+}
+
+.main-nav a.order-nav-link {
+  display: inline-block;
+  padding: 9px 17px;
+  border-radius: 6px;
+  background-color: #d5afc0;
+  color: #fff;
+  font-weight: 700;
+}
+
+.main-nav a.order-nav-link::after {
+  display: none;
+}
+
+.main-nav a.order-nav-link:hover {
+  background-color: #7db9da;
+  color: #fff;
+}
+
+.main-nav a.order-nav-link:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
 }
 
 /* Hamburger Button - Hidden on Desktop */
@@ -166,6 +190,7 @@
 
   .main-nav ul {
     flex-direction: column;
+    align-items: stretch;
     padding: 20px;
   }
 
@@ -182,6 +207,11 @@
     display: block;
     padding: 15px 10px;
     font-size: 1.2rem;
+  }
+
+  .main-nav a.order-nav-link {
+    display: block;
+    padding: 15px 10px;
   }
 
   .main-nav a::after {
