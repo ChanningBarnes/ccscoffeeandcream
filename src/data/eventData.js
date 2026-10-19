@@ -11,13 +11,13 @@ const events = [
     id: 2,
     title: 'K|LA Boutique Pop-Up',
     date: 'Sunday, October 25th',
-    time: '11:00AM - 2:00PM',
+    time: '12:00AM - 2:00PM',
     address: 'K|LA Boutique, 4123 Park Rd, Charlotte, NC 28209, United States'
   },
   {
     id: 3,
     title: 'K|LA Boutique Pop-Up',
-    date: 'Sunday, November 14th',
+    date: 'Saturday, November 14th',
     time: '11:00AM - 2:00PM',
     address: 'K|LA Boutique, 4123 Park Rd, Charlotte, NC 28209, United States'
   },
